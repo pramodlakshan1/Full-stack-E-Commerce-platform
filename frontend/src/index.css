@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/* ────────────────────────────────────────────── */
+/* Custom animations – no tailwind.config.js needed */
+/* ────────────────────────────────────────────── */
+
+@layer utilities {
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) translateX(0);
+    }
+    50% {
+      transform: translateY(-25px) translateX(15px);
+    }
+  }
+
+  @keyframes pulseSlow {
+    0%, 100% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  /* Now define the animation utilities you want to use */
+  .animate-fade-in-up {
+    animation: fadeInUp 1.2s ease-out forwards;
+  }
+
+  .animate-float-slow {
+    animation: float 12s ease-in-out infinite;
+  }
+
+  .animate-float-medium {
+    animation: float 9s ease-in-out infinite;
+  }
+
+  .animate-float-fast {
+    animation: float 7s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulseSlow 15s ease-in-out infinite;
+  }
+}
+
+/* Optional: delay helpers (if you don't want inline delays) */
+@layer utilities {
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-700 { animation-delay: 700ms; }
+  .delay-1000 { animation-delay: 1000ms; }
+  .delay-1500 { animation-delay: 1500ms; }
+}
